@@ -32,8 +32,6 @@ export default class AuthContainer extends Component {
 
   render(){
     return(
-      <div>
-        <h1>Auth Container</h1>
         <LoginForm
           user={this.state.user}
           password={this.state.password}
@@ -42,7 +40,6 @@ export default class AuthContainer extends Component {
           handleChange={this.handleChange.bind(this)}
           handleLogin={this.handleLogin.bind(this)}
         />
-      </div>
     )
   }
 

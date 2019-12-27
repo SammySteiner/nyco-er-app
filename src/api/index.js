@@ -1,7 +1,12 @@
+import mockData from '../mock_data/MOCK_DATA.json';
+
 const SITEMINDER = 'https://msdlvw-hhsces01.csc.nycnet/siteminderagent/forms/loginpages/wc/login.fcc'
-const EMERGENCY_APP_WEB = ''
+const STEP_A = 'https://msdlvw-hhsces01.csc.nycnet/HHSWorkerConnectWeb/homePageRouter.jsp?agency=doitt' //GET
+const STEP_B = 'https://msdlvw-hhsces01.csc.nycnet/HHSWorkerConnectWeb/getRouter.hhsc' // GET
+const STEP_C = 'https://msdlvw-hhsces01.csc.nycnet/HHSWorkerConnectWeb/appmanager/hhs/hhsworkerconnect' //GET
 
 export function login(params){
+
   var formDetails = {
     'user': params.user,
     'password': params.password,
@@ -13,10 +18,10 @@ export function login(params){
     'smauthreason':'0'
   };
   const formBody = Object.keys(formDetails).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(formDetails[key])).join('&');
+
   return fetch(SITEMINDER, {
       headers: {
       'Content-Type':'application/x-www-form-urlencoded',
-      'Referer': 'https://msdlvw-hhsces01.csc.nycnet/'
     },
     method: 'POST',
     body: formBody
@@ -25,5 +30,5 @@ export function login(params){
 }
 
 export function search(){
-
+  return mockData
 }
