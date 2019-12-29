@@ -18,9 +18,9 @@ export default class SearchContainer extends Component {
       aPS: false,
       data: [],
       filterText: '',
-      sortColumn: '',
+      sortColumn: 'name',
       sortDirection: true,
-      page: 1,
+      page: 0,
       count: 20
     }
   }
@@ -47,6 +47,30 @@ export default class SearchContainer extends Component {
     this.setState({
       sortColumn: name,
       sortDirection: sort
+    })
+  }
+
+  handleChangePage = name => event => {
+    var newPage = 0
+    var lastPage = (this.state.data.length / this.state.count) - 1
+    switch (name) {
+      case 'first':
+        newPage = 0
+        break;
+      case 'prev':
+        newPage = this.state.page === 0 ? 0 : this.state.page - 1
+        break;
+      case 'next':
+        newPage = this.state.page === lastPage ? lastPage : this.state.page + 1
+        break;
+      case 'last':
+        newPage = lastPage
+        break;
+      default:
+        newPage = this.state.page
+    }
+    this.setState({
+      page: newPage
     })
   }
 
@@ -79,6 +103,7 @@ export default class SearchContainer extends Component {
                   count={this.state.count}
                   handleChange={this.handleChange.bind(this)}
                   handleSort={this.handleSort.bind(this)}
+                  handleChangePage={this.handleChangePage.bind(this)}
                 />
               </div>
             </div>

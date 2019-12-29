@@ -1,5 +1,6 @@
 import React from 'react'
 import TableRow from './TableRow'
+import PaginationBar from './PaginationBar'
 
 export default(props) => {
 
@@ -19,17 +20,16 @@ export default(props) => {
     }
     if (sortColumn === "dob") {
       return sortDirection ?
-      filteredData.sort( (a,b) => (convertDate(a[sortColumn]) > convertDate(b[sortColumn]) ? 1 : -1)) :
-      filteredData.sort( (a,b) => (convertDate(a[sortColumn]) < convertDate(b[sortColumn]) ? 1 : -1))
+      filteredData.sort( (a,b) => a[sortColumn] == '' ? 1 : b[sortColumn] == '' ? -1 : convertDate(a[sortColumn]).localeCompare(convertDate(b[sortColumn]))) :
+      filteredData.sort( (a,b) => a[sortColumn] == '' ? 1 : b[sortColumn] == '' ? -1 : convertDate(b[sortColumn]).localeCompare(convertDate(a[sortColumn])))
     } else {
       return sortDirection ?
-      filteredData.sort( (a,b) => (a[sortColumn] > b[sortColumn] ? 1 : -1)) :
-      filteredData.sort( (a,b) => (a[sortColumn] < b[sortColumn] ? 1 : -1))
+      filteredData.sort( (a,b) => a[sortColumn] == '' ? 1 : b[sortColumn] == '' ? -1 : a[sortColumn].localeCompare(b[sortColumn])) :
+      filteredData.sort( (a,b) => a[sortColumn] == '' ? 1 : b[sortColumn] == '' ? -1 : b[sortColumn].localeCompare(a[sortColumn]))
     }
   }
 
   var limitData = (data) => {
-    // not working properly
     var begining = (props.page * props.count)
     var end = ((props.page + 1) * props.count) - 1
     return data.slice(begining, end)
@@ -45,6 +45,8 @@ export default(props) => {
       return ""
     }
   }
+
+  var numberOfRows = formattedRows().length
 
   var upChevron = <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="-5 0 35 30"><path d="M15.997 13.374l-7.081 7.081L7 18.54l8.997-8.998 9.003 9-1.916 1.916z"/></svg>
 
@@ -88,6 +90,17 @@ export default(props) => {
               </tr>
             </thead>
             <tbody>{formattedRows()}</tbody>
+            <tfoot>
+            <PaginationBar
+              begining={numberOfRows ? props.page * props.count + 1 : 0}
+              end={numberOfRows ? (props.page * props.count + 1) + numberOfRows : 0}
+              count={numberOfRows}
+              total={props.data.length}
+              page={props.page + 1}
+              totalPages={props.data.length / props.count}
+              handleChangePage={props.handleChangePage}
+            />
+            </tfoot>
           </table>
         </div>
       </div>
