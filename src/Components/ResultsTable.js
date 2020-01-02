@@ -18,14 +18,14 @@ export default(props) => {
   var downChevron = <svg className="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="-5 0 35 30"><path d="M16.003 18.626l7.081-7.081L25 13.46l-8.997 8.998-9.003-9 1.917-1.916z"/></svg>
 
   return (
-    <div className="w-full h-full pb-8">
-      <div className="bg-white shadow-md rounded h-full px-8 pt-6 pb-8 my-2">
+    <div className="w-full">
+      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 my-2">
         <div className="w-full">
           <h2 className="inline-block ">Results</h2>
           <input className="inline-block float-right mt-5 mb-2" placeholder="search" type="text" id="filterText" value={props.filterText} onChange={props.handleChange('filterText')}/>
         </div>
-        <div className="table w-full h-full">
-          <table className="h-full">
+        <div className="table w-full">
+          <table>
             <thead>
               <tr>
                 <td>

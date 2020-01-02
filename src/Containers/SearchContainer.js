@@ -22,7 +22,7 @@ export default class SearchContainer extends Component {
       sortColumn: 'name',
       sortDirection: true,
       page: 0,
-      count: 20,
+      count: 15,
       lastPage: 0,
       total: 0
     }
@@ -130,7 +130,7 @@ export default class SearchContainer extends Component {
   render(){
     return(
       <div>
-        <div className="flex sm:flex-col md:flex-row lg:flex-row xl:flex-row color-light-background">
+        <div className="flex max-h-full sm:flex-col md:flex-row lg:flex-row xl:flex-row color-light-background">
           <div className="bg-gray-200 p-2 flex-1">
                 <SearchForm
                   borough={this.state.borough}
