@@ -2,7 +2,7 @@ import React from 'react'
 
 export default(props) => {
   return (
-    <tr>
+    <tr className="bottom">
       <td colSpan={4}><span className="inline-flex float-left mt-2">Showing {props.begining} to {props.end} of {props.total} results</span>
       <span className="inline-flex float-right mt-2">
         <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l" onClick={props.handleChangePage('first')}>

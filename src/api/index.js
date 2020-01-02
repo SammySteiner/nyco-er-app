@@ -1,9 +1,6 @@
 import mockData from '../mock_data/MOCK_DATA.json';
 
 const SITEMINDER = 'https://msdlvw-hhsces01.csc.nycnet/siteminderagent/forms/loginpages/wc/login.fcc'
-const STEP_A = 'https://msdlvw-hhsces01.csc.nycnet/HHSWorkerConnectWeb/homePageRouter.jsp?agency=doitt' //GET
-const STEP_B = 'https://msdlvw-hhsces01.csc.nycnet/HHSWorkerConnectWeb/getRouter.hhsc' // GET
-const STEP_C = 'https://msdlvw-hhsces01.csc.nycnet/HHSWorkerConnectWeb/appmanager/hhs/hhsworkerconnect' //GET
 
 export function login(params){
 

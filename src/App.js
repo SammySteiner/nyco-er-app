@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import AuthContainer from './Containers/AuthContainer.js'
 import SearchContainer from './Containers/SearchContainer.js'
 import HeaderContainer from './Containers/HeaderContainer.js'

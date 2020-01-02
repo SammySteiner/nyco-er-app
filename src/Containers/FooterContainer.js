@@ -1,5 +1,5 @@
 import React from 'react';
-import { ReactComponent as Logo } from '../icon-logo-secondary.svg'
+import { ReactComponent as Logo } from '../svg/icon-logo-secondary.svg'
 
 export default(props) => {
   return (
@@ -19,10 +19,10 @@ export default(props) => {
         </a>
         <p>NYC Opportunity is the
           <a href="http://nyc.gov/opportunity">New York City Mayor's Office for Economic Opportunity</a>. We are committed to sharing open source software that we use in our products. Feel free to ask questions and share feedback. Follow @nycopportunity on&nbsp;
-          <a href="https://twitter.com/nycopportunity" target="_blank" rel="nofollow noopener">Twitter</a>,&nbsp;
-          <a href="https://www.facebook.com/NYCOpportunity/" target="_blank" rel="nofollow noopener">Facebook</a>,&nbsp;
-          <a href="https://medium.com/@nycopportunity" target="_blank" rel="nofollow noopener">Medium</a>, and&nbsp;
-          <a href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity" target="_blank" rel="nofollow noopener" title="Viewable by github.com/orgs/CityOfNewYork/ members.">Github</a>.</p>
+          <a href="https://twitter.com/nycopportunity" target="_blank" rel="noopener noreferrer">Twitter</a>,&nbsp;
+          <a href="https://www.facebook.com/NYCOpportunity/" target="_blank" rel="noopener noreferrer">Facebook</a>,&nbsp;
+          <a href="https://medium.com/@nycopportunity" target="_blank" rel="noopener noreferrer">Medium</a>, and&nbsp;
+          <a href="https://github.com/orgs/CityOfNewYork/teams/nycopportunity" target="_blank" rel="noopener noreferrer" title="Viewable by github.com/orgs/CityOfNewYork/ members.">Github</a>.</p>
         <small>© City of New York, 2019 All Rights Reserved.
           <br/>NYC is a trademark and service mark of the City of New York.</small>
       </div>

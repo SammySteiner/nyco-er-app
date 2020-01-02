@@ -3,8 +3,8 @@ import React from 'react'
 export default(props) => {
 
   return (
-      <div className="w-full center">
-      <form className="bg-white shadow-md rounded max-w-md px-8 pt-6 pb-8 my-2" onSubmit={(event)=>props.handleSearch(event)}>
+      <div className="w-full h-full pb-8 center ">
+      <form className="bg-white shadow-md rounded max-w-md px-8 pt-6 pb-8 my-2 h-full" onSubmit={(event)=>props.handleSearch(event)}>
       <h2 >Enter Search Criteria</h2>
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="borough">
@@ -59,8 +59,8 @@ export default(props) => {
         </div>
 
         <div className="mb-4">
-          <label className="checkbox checkmark" htmlFor="disabled">
-              <input id="disabled" type="checkbox" checked={props.disabled} onChange={props.handleChange('disabled')}/><span className="checkbox__label check-container">Disabled</span>
+          <label className="checkbox" htmlFor="disabled">
+              <input id="disabled" type="checkbox" checked={props.disabled} onChange={props.handleChange('disabled')}/><span className="checkbox__label">Disabled</span>
           </label>
           <label className="checkbox" htmlFor="floodZone">
               <input id="floodZone" type="checkbox" checked={props.floodZone} onChange={props.handleChange('floodZone')}/><span className="checkbox__label">Flood Zone</span>
@@ -74,10 +74,7 @@ export default(props) => {
           <label className="checkbox" htmlFor="aPS">
               <input id="aPS" type="checkbox" checked={props.aPS} onChange={props.handleChange('aPS')}/><span className="checkbox__label">APS</span>
           </label>
-
-
         </div>
-
         <div className="flex items-center justify-between">
           <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button" onClick={(event)=>props.handleSearch(event)}>
             Search
