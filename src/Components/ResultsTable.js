@@ -19,9 +19,9 @@ export default(props) => {
 
   return (
     <div className="w-full">
-      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 my-2">
+      <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 my-2 overflow-auto">
         <div className="w-full">
-          <h2 className="inline-block ">Results</h2>
+          <h2 className="inline-block w-full">Results</h2>
           <input className="inline-block float-right mt-5 mb-2" placeholder="search" type="text" id="filterText" value={props.filterText} onChange={props.handleChange('filterText')}/>
         </div>
         <div className="table w-full">
@@ -29,7 +29,7 @@ export default(props) => {
             <thead>
               <tr>
                 <td>
-                  <button className="hover:text-gray-400 font-bold  rounded inline-flex items-center" onClick={props.handleSort('name')}>
+                  <button className="hover:text-gray-400 font-bold rounded inline-flex items-center" onClick={props.handleSort('name')}>
                     <strong>Client Name</strong>
                     {props.sortColumn === 'name' && props.sortDirection === false ? upChevron : downChevron}
                   </button>
